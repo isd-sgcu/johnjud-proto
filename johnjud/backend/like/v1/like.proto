@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package johnjud.backend.like.v1;
+
+option go_package = "johnjud/backend/like/v1";
+
+service LikeService {
+  rpc FindByUserId(FindLikeByUserIdRequest) returns (FindLikeByUserIdResponse) {}
+  rpc Create(CreateLikeRequest) returns (CreateLikeResponse){}
+  rpc Delete(DeleteLikeRequest) returns (DeleteLikeResponse){}
+}
+
+message Like{
+  string id = 1;
+  string userId = 2;
+  string petId = 3;
+}
+
+// Find Like By User Id
+
+message FindLikeByUserIdRequest{
+  string id = 1;
+}
+
+message FindLikeByUserIdResponse{
+  repeated Like likes = 1;
+}
+
+// Create Like
+
+message CreateLikeRequest{
+  Like like = 1;
+}
+
+message CreateLikeResponse{
+  Like like = 1;
+}
+
+// Delete Like
+
+message DeleteLikeRequest{
+  string id = 1;
+}
+
+message DeleteLikeResponse{
+  bool success = 1;
+}
