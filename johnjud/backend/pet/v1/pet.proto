@@ -9,6 +9,7 @@ service PetService {
   rpc FindOne(FindOnePetRequest) returns (FindOnePetResponse) {}
   rpc Create(CreatePetRequest) returns (CreatePetResponse){}
   rpc Update(UpdatePetRequest) returns (UpdatePetResponse){}
+  rpc ChangeView(ChangeViewPetRequest) returns (ChangeViewPetResponse){}
   rpc Delete(DeletePetRequest) returns (DeletePetResponse){}
 }
 
@@ -29,13 +30,13 @@ message Pet{
   string name = 4;
   string birthdate = 5;
   Gender gender = 6;
-  bool sterile = 7;
-  bool vaccine = 8;
-  PetStatus status = 9;
-  string habit = 10;
-  string caption = 11;
-  bool visible = 12;
-  string imageUrl = 13;
+  string habit = 7;
+  string caption = 8;
+  string imageUrl = 9;
+  PetStatus status = 10;
+  bool isSterile = 11;
+  bool isVaccinated = 12;
+  bool isVisible = 13;
   bool isClubPet = 14;
   string background = 15;
   string address = 16;
@@ -79,6 +80,17 @@ message UpdatePetRequest{
 
 message UpdatePetResponse{
   Pet Pet = 1;
+}
+
+// Change View Pet
+
+message ChangeViewPetRequest{
+  string id = 1;
+  bool visible = 2;
+}
+
+message ChangeViewPetResponse{
+  bool success = 1;
 }
 
 // Delete Pet
