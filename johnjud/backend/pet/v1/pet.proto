@@ -32,7 +32,6 @@ message Pet{
   Gender gender = 6;
   string habit = 7;
   string caption = 8;
-  string imageUrl = 9;
   PetStatus status = 10;
   bool isSterile = 11;
   bool isVaccinated = 12;
