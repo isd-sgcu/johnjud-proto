@@ -5,8 +5,10 @@ package johnjud.auth.auth.v1;
 option go_package = "johnjud/auth/auth/v1";
 
 service AuthService {
-  rpc Validate(ValidateRequest) returns (ValidateResponse){}
-  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse){}
+  rpc Validate(ValidateRequest) returns (ValidateResponse) {}
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse) {}
+  rpc Signup(SignupRequest) returns (SignupResponse) {}
+  rpc SignIn(SignInRequest) returns (SignInResponse) {}
 }
 
 message Credential{
@@ -33,5 +35,32 @@ message RefreshTokenRequest{
 }
 
 message RefreshTokenResponse{
+  Credential credential = 1;
+}
+
+// Sign up
+
+message SignupRequest {
+  string firstName = 1;
+  string lastName = 2;
+  string email = 3;
+  string password = 4;
+}
+
+message SignupResponse {
+  string id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+}
+
+// Sign in
+
+message SignInRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message SignInResponse {
   Credential credential = 1;
 }
