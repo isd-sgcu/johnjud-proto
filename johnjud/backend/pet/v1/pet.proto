@@ -27,7 +27,7 @@ message Pet{
   string type = 2;
   string species = 3;
   string name = 4;
-  string birthDate = 5;
+  string birthdate = 5;
   Gender gender = 6;
   bool sterile = 7;
   bool vaccine = 8;
