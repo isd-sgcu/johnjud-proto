@@ -64,29 +64,29 @@ message FindOnePetResponse{
 // Create Pet
 
 message CreatePetRequest{
-    Pet Pet = 1;
+  Pet Pet = 1;
 }
 
 message CreatePetResponse{
-    Pet Pet = 1;
+  Pet Pet = 1;
 }
 
 // Update Pet
 
 message UpdatePetRequest{
-    Pet Pet = 1;
+  Pet Pet = 1;
 }
 
 message UpdatePetResponse{
-    Pet Pet = 1;
+  Pet Pet = 1;
 }
 
 // Delete Pet
 
 message DeletePetRequest{
-    string id = 1;
+  string id = 1;
 }
 
 message DeletePetResponse{
-    bool success = 1;
+  bool success = 1;
 }
