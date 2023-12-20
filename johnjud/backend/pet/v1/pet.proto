@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package johnjud.backend.pet.v1;
+
+option go_package = "johnjud/backend/pet/v1";
+
+service PetService {
+  rpc FindAll(FindAllPetRequest) returns (FindAllPetResponse) {}
+  rpc FindOne(FindOnePetRequest) returns (FindOnePetResponse) {}
+  rpc Create(CreatePetRequest) returns (CreatePetResponse){}
+  rpc Update(UpdatePetRequest) returns (UpdatePetResponse){}
+  rpc Delete(DeletePetRequest) returns (DeletePetResponse){}
+}
+
+enum PetStatus{
+  FINDHOME = 0;
+  ADOPTED = 1;
+}
+
+enum Gender{
+    MALE = 0;
+    FEMALE = 1;
+}
+
+message Pet{
+  string id = 1;
+  string type = 2;
+  string species = 3;
+  string name = 4;
+  string birthDate = 5;
+  Gender gender = 6;
+  bool sterile = 7;
+  bool vaccine = 8;
+  PetStatus status = 9;
+  string habit = 10;
+  string caption = 11;
+  bool visible = 12;
+  string imageUrl = 13;
+  bool isClubPet = 14;
+  string background = 15;
+  string address = 16;
+  string contact = 17;
+}
+
+// Find All Pet
+
+message FindAllPetRequest{
+}
+
+message FindAllPetResponse{
+  repeated Pet Pets = 1;
+}
+
+// Find Pet
+
+message FindOnePetRequest{
+  string id = 1;
+}
+
+message FindOnePetResponse{
+  Pet Pet = 1;
+}
+
+// Create Pet
+
+message CreatePetRequest{
+    Pet Pet = 1;
+}
+
+message CreatePetResponse{
+    Pet Pet = 1;
+}
+
+// Update Pet
+
+message UpdatePetRequest{
+    Pet Pet = 1;
+}
+
+message UpdatePetResponse{
+    Pet Pet = 1;
+}
+
+// Delete Pet
+
+message DeletePetRequest{
+    string id = 1;
+}
+
+message DeletePetResponse{
+    bool success = 1;
+}
