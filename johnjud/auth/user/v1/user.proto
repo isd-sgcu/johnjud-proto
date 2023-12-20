@@ -6,7 +6,6 @@ option go_package = "johnjud/auth/user/v1";
 
 service UserService {
   rpc FindOne(FindOneUserRequest) returns (FindOneUserResponse){}
-  rpc Create(CreateUserRequest) returns (CreateUserResponse){}
   rpc Update(UpdateUserRequest) returns (UpdateUserResponse){}
   rpc Delete(DeleteUserRequest) returns (DeleteUserResponse){}
 }
@@ -27,16 +26,6 @@ message FindOneUserRequest{
 }
 
 message FindOneUserResponse{
-  User user = 1;
-}
-
-// Create
-
-message CreateUserRequest{
-  User user = 1;
-}
-
-message CreateUserResponse{
   User user = 1;
 }
 
