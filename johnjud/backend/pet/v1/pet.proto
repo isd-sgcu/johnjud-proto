@@ -33,6 +33,7 @@ message Pet{
   string habit = 7;
   string caption = 8;
   PetStatus status = 10;
+  repeated string imageUrls = 9;
   bool isSterile = 11;
   bool isVaccinated = 12;
   bool isVisible = 13;
