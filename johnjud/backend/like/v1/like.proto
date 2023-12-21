@@ -19,7 +19,7 @@ message Like{
 // Find Like By User Id
 
 message FindLikeByUserIdRequest{
-  string id = 1;
+  string userId = 1;
 }
 
 message FindLikeByUserIdResponse{

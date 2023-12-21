@@ -19,7 +19,6 @@ message Adopt{
 // Find All Adopt
 
 message FindAllAdoptRequest{
-  string id = 1;
 }
 
 message FindAllAdoptResponse{
