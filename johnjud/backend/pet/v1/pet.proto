@@ -11,6 +11,7 @@ service PetService {
   rpc Update(UpdatePetRequest) returns (UpdatePetResponse){}
   rpc ChangeView(ChangeViewPetRequest) returns (ChangeViewPetResponse){}
   rpc Delete(DeletePetRequest) returns (DeletePetResponse){}
+  rpc AdoptPet(AdoptPetRequest) returns (AdoptPetResponse) {}
 }
 
 enum PetStatus{
@@ -41,6 +42,7 @@ message Pet{
   string background = 15;
   string address = 16;
   string contact = 17;
+  string adoptBy = 18;
 }
 
 // Find All Pet
@@ -101,4 +103,15 @@ message DeletePetRequest{
 
 message DeletePetResponse{
   bool success = 1;
+}
+
+// Adopt Pet
+
+message AdoptPetRequest {
+  string pet_id = 1;  
+  string user_id = 2;
+}
+
+message AdoptPetResponse {
+  bool success = 1; 
 }
