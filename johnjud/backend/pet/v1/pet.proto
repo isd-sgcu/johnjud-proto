@@ -108,8 +108,8 @@ message DeletePetResponse{
 // Adopt Pet
 
 message AdoptPetRequest {
-  string pet_id = 1;  
-  string user_id = 2;
+  string petId = 1;  
+  string userId = 2;
 }
 
 message AdoptPetResponse {
