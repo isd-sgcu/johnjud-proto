@@ -9,6 +9,7 @@ service AuthService {
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse) {}
   rpc Signup(SignupRequest) returns (SignupResponse) {}
   rpc SignIn(SignInRequest) returns (SignInResponse) {}
+  rpc SignOut(SignOutRequest) returns (SignOutResponse) {}
 }
 
 message Credential{
@@ -63,4 +64,14 @@ message SignInRequest {
 
 message SignInResponse {
   Credential credential = 1;
+}
+
+// Sign out
+
+message SignOutRequest {
+  string token = 1;
+}
+
+message SignOutResponse {
+  bool isSuccess = 1;
 }
