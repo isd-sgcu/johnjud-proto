@@ -7,6 +7,7 @@ option go_package = "johnjud/file/image/v1";
 service ImageService {
   rpc Upload(UploadImageRequest) returns (UploadImageResponse){}
   rpc FindByPetId(FindImageByPetIdRequest) returns (FindImageByPetIdResponse) {}
+  rpc AssignPet(AssignPetRequest) returns (AssignPetResponse) {}
   rpc Delete(DeleteImageRequest) returns (DeleteImageResponse) {}
 }
 
@@ -36,6 +37,17 @@ message FindImageByPetIdRequest{
 
 message FindImageByPetIdResponse{
   repeated Image images = 1;
+}
+
+// Assign Pet
+
+message AssignPetRequest{
+  repeated string ids = 1;
+  string petId = 2;
+}
+
+message AssignPetResponse{
+  bool success = 1;
 }
 
 // Delete Image
