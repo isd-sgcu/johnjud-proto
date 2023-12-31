@@ -23,6 +23,7 @@ message UploadImageRequest{
   string filename = 1;
   bytes data = 2;
   string petId = 3;
+  string objectKey = 4;
 }
 
 message UploadImageResponse{
@@ -54,6 +55,7 @@ message AssignPetResponse{
 
 message DeleteImageRequest{
   string id = 1;
+  string objectKey = 2;
 }
 
 message DeleteImageResponse{
