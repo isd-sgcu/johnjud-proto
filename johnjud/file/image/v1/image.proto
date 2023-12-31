@@ -15,6 +15,7 @@ message Image{
   string id = 1;
   string petId = 2;
   string imageUrl = 3;
+  string objectKey = 4;
 }
 
 // Upload Image
@@ -23,7 +24,6 @@ message UploadImageRequest{
   string filename = 1;
   bytes data = 2;
   string petId = 3;
-  string objectKey = 4;
 }
 
 message UploadImageResponse{
