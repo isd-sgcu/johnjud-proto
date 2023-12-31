@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package johnjud.backend.pet.v1;
 
+import "johnjud/file/image/v1/image.proto";
+
 option go_package = "johnjud/backend/pet/v1";
 
 service PetService {
@@ -33,8 +35,8 @@ message Pet{
   Gender gender = 6;
   string habit = 7;
   string caption = 8;
+  repeated johnjud.file.image.v1.Image images = 9;
   PetStatus status = 10;
-  repeated string imageUrls = 9;
   bool isSterile = 11;
   bool isVaccinated = 12;
   bool isVisible = 13;
