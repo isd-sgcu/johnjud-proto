@@ -55,7 +55,6 @@ message AssignPetResponse{
 
 message DeleteImageRequest{
   string id = 1;
-  string objectKey = 2;
 }
 
 message DeleteImageResponse{
