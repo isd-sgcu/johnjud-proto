@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package johnjud.backend.pet.v1;
+
+import "johnjud/file/image/v1/image.proto";
+
+option go_package = "johnjud/backend/pet/v1";
+
+service PetService {
+  rpc FindAll(FindAllPetRequest) returns (FindAllPetResponse) {}
+  rpc FindOne(FindOnePetRequest) returns (FindOnePetResponse) {}
+  rpc Create(CreatePetRequest) returns (CreatePetResponse){}
+  rpc Update(UpdatePetRequest) returns (UpdatePetResponse){}
+  rpc ChangeView(ChangeViewPetRequest) returns (ChangeViewPetResponse){}
+  rpc Delete(DeletePetRequest) returns (DeletePetResponse){}
+  rpc AdoptPet(AdoptPetRequest) returns (AdoptPetResponse) {}
+}
+
+enum PetStatus{
+  FINDHOME = 0;
+  ADOPTED = 1;
+}
+
+enum Gender{
+    MALE = 0;
+    FEMALE = 1;
+}
+
+message Pet{
+  string id = 1;
+  string type = 2;
+  string species = 3;
+  string name = 4;
+  string birthdate = 5;
+  Gender gender = 6;
+  string habit = 7;
+  string caption = 8;
+  repeated johnjud.file.image.v1.Image images = 9;
+  PetStatus status = 10;
+  bool isSterile = 11;
+  bool isVaccinated = 12;
+  bool isVisible = 13;
+  bool isClubPet = 14;
+  string background = 15;
+  string address = 16;
+  string contact = 17;
+  string adoptBy = 18;
+}
+
+// Find All Pet
+
+message FindAllPetRequest{
+}
+
+message FindAllPetResponse{
+  repeated Pet Pets = 1;
+}
+
+// Find Pet
+
+message FindOnePetRequest{
+  string id = 1;
+}
+
+message FindOnePetResponse{
+  Pet Pet = 1;
+}
+
+// Create Pet
+
+message CreatePetRequest{
+  Pet Pet = 1;
+}
+
+message CreatePetResponse{
+  Pet Pet = 1;
+}
+
+// Update Pet
+
+message UpdatePetRequest{
+  Pet Pet = 1;
+}
+
+message UpdatePetResponse{
+  Pet Pet = 1;
+}
+
+// Change View Pet
+
+message ChangeViewPetRequest{
+  string id = 1;
+  bool visible = 2;
+}
+
+message ChangeViewPetResponse{
+  bool success = 1;
+}
+
+// Delete Pet
+
+message DeletePetRequest{
+  string id = 1;
+}
+
+message DeletePetResponse{
+  bool success = 1;
+}
+
+// Adopt Pet
+
+message AdoptPetRequest {
+  string petId = 1;  
+  string userId = 2;
+}
+
+message AdoptPetResponse {
+  bool success = 1; 
+}
