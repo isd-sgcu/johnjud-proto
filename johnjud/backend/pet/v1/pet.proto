@@ -23,18 +23,20 @@ message Pet{
   string name = 4;
   string birthdate = 5;
   string gender = 6;
-  string habit = 7;
-  string caption = 8;
-  repeated johnjud.file.image.v1.Image images = 9;
-  string status = 10;
-  bool isSterile = 11;
-  bool isVaccinated = 12;
-  bool isVisible = 13;
-  bool isClubPet = 14;
-  string background = 15;
-  string address = 16;
-  string contact = 17;
-  string adoptBy = 18;
+  string color = 7;
+  string pattern = 8;
+  string habit = 9;
+  string caption = 10;
+  repeated johnjud.file.image.v1.Image images = 11;
+  string status = 12;
+  bool isSterile = 13;
+  bool isVaccinated = 14;
+  bool isVisible = 15;
+  bool isClubPet = 16;
+  string origin = 17;
+  string address = 18;
+  string contact = 19;
+  string adoptBy = 20;
 }
 
 // Find All Pet
