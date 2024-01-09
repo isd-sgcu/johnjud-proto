@@ -16,27 +16,17 @@ service PetService {
   rpc AdoptPet(AdoptPetRequest) returns (AdoptPetResponse) {}
 }
 
-enum PetStatus{
-  FINDHOME = 0;
-  ADOPTED = 1;
-}
-
-enum Gender{
-    MALE = 0;
-    FEMALE = 1;
-}
-
 message Pet{
   string id = 1;
   string type = 2;
   string species = 3;
   string name = 4;
   string birthdate = 5;
-  Gender gender = 6;
+  string gender = 6;
   string habit = 7;
   string caption = 8;
   repeated johnjud.file.image.v1.Image images = 9;
-  PetStatus status = 10;
+  string status = 10;
   bool isSterile = 11;
   bool isVaccinated = 12;
   bool isVisible = 13;
