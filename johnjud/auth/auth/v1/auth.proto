@@ -10,6 +10,8 @@ service AuthService {
   rpc SignUp(SignUpRequest) returns (SignUpResponse) {}
   rpc SignIn(SignInRequest) returns (SignInResponse) {}
   rpc SignOut(SignOutRequest) returns (SignOutResponse) {}
+  rpc ForgotPassword(ForgotPasswordRequest) returns (ForgotPasswordResponse) {}
+  rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse) {}
 }
 
 message Credential{
@@ -73,5 +75,26 @@ message SignOutRequest {
 }
 
 message SignOutResponse {
+  bool isSuccess = 1;
+}
+
+// Forgot password
+
+message ForgotPasswordRequest {
+  string email = 1;
+}
+
+message ForgotPasswordResponse {
+  string url = 1;
+}
+
+// Reset password
+
+message ResetPasswordRequest {
+  string token = 1;
+  string password = 2;
+}
+
+message ResetPasswordResponse {
   bool isSuccess = 1;
 }
