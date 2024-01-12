@@ -42,6 +42,15 @@ message Pet{
 // Find All Pet
 
 message FindAllPetRequest{
+  string search = 1;
+  string type = 2;
+  string gender = 3;
+  string color = 4;
+  string pattern = 5;
+  int32 age = 6;
+  string origin = 7;
+  int32 pageSize = 8;
+  int32 page = 9;
 }
 
 message FindAllPetResponse{
