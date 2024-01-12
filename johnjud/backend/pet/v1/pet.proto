@@ -47,7 +47,7 @@ message FindAllPetRequest{
   string gender = 3;
   string color = 4;
   string pattern = 5;
-  int32 age = 6;
+  string age = 6;
   string origin = 7;
   int32 pageSize = 8;
   int32 page = 9;
