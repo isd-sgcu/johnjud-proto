@@ -47,11 +47,11 @@ message FindAllPetRequest{
   string gender = 3;
   string color = 4;
   string pattern = 5;
-  reserved string age = 6;
+  string age = 6;
   string origin = 7;
   int32 pageSize = 8;
   int32 page = 9;
-  string year = 10;
+  reserved string year = 10;
 }
 
 message FindAllPetResponse{
