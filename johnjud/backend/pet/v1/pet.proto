@@ -16,6 +16,13 @@ service PetService {
   rpc AdoptPet(AdoptPetRequest) returns (AdoptPetResponse) {}
 }
 
+message FindAllPetMetaData {
+  int32 page = 1;
+  int32 totalPages = 2;
+  int32 pageSize = 3;
+  int32 total = 4;
+}
+
 message Pet{
   string id = 1;
   string type = 2;
@@ -57,6 +64,7 @@ message FindAllPetRequest{
 
 message FindAllPetResponse{
   repeated Pet Pets = 1;
+  FindAllPetMetaData metadata;
 }
 
 // Find Pet
