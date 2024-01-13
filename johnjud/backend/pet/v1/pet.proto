@@ -26,24 +26,22 @@ message FindAllPetMetaData {
 message Pet{
   string id = 1;
   string type = 2;
-  string species = 3;
-  string name = 4;
-  string birthdate = 5;
-  string gender = 6;
-  string color = 7;
-  string pattern = 8;
-  string habit = 9;
-  string caption = 10;
-  repeated johnjud.file.image.v1.Image images = 11;
-  string status = 12;
-  bool isSterile = 13;
-  bool isVaccinated = 14;
-  bool isVisible = 15;
-  bool isClubPet = 16;
-  string origin = 17;
-  string address = 18;
-  string contact = 19;
-  string adoptBy = 20;
+  string name = 3;
+  string birthdate = 4;
+  string gender = 5;
+  string color = 6;
+  string pattern = 7;
+  string habit = 8;
+  string caption = 9;
+  repeated johnjud.file.image.v1.Image images = 10;
+  string status = 11;
+  bool isSterile = 12;
+  bool isVaccinated = 13;
+  bool isVisible = 14;
+  string origin = 15;
+  string address = 16;
+  string contact = 17;
+  string adoptBy = 18;
 }
 
 // Find All Pet
