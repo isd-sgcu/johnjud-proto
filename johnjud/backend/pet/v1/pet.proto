@@ -58,13 +58,11 @@ message FindAllPetRequest{
   string origin = 7;
   int32 pageSize = 8;
   int32 page = 9;
-  // reserved
-  reserved string year = 10;
 }
 
 message FindAllPetResponse{
   repeated Pet Pets = 1;
-  FindAllPetMetaData metadata;
+  FindAllPetMetaData metadata = 2;
 }
 
 // Find Pet
