@@ -58,6 +58,7 @@ message FindAllPetRequest{
   int32 page = 9;
   int32 maxAge = 10;
   int32 minAge = 11;
+  bool isAdmin = 12;
 }
 
 message FindAllPetResponse{
